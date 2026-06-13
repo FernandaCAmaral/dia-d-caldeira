@@ -1,6 +1,6 @@
 # 🚀 Caldeira Workshop Guide (MVP)
 
-Aplicação web desenvolvida como **MVP demonstrativo para o workshop da FIAP**, em parceria com o **Instituto Caldeira**, com mentoria do instrutor **:contentReference[oaicite:0]{index=0}**.
+Aplicação web desenvolvida como **MVP demonstrativo para o workshop da FIAP**, em parceria com o **Instituto Caldeira**, com mentoria do instrutor **Sandro Martins da Costa**.
 
 Este projeto simula um sistema real de apoio à navegação e orientação de participantes em eventos de grande escala (1.000+ pessoas), como workshops presenciais realizados no campus do Instituto Caldeira.
 
@@ -85,7 +85,6 @@ Criar uma aplicação funcional que:
 - React + TypeScript
 - Vite
 - Tailwind CSS
-- Shadcn UI
 
 ### Backend (simulado / preparado)
 - Supabase (Auth + DB + Storage)
