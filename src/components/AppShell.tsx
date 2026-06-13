@@ -1,5 +1,5 @@
 import { Link, useRouterState } from "@tanstack/react-router";
-import { Home, Map, Calendar, LifeBuoy, LogOut } from "lucide-react";
+import { Home, Map, Calendar, LifeBuoy, LogOut, ScanLine } from "lucide-react";
 import type { ReactNode } from "react";
 import { Logo } from "./Logo";
 import { Button } from "@/components/ui/button";
@@ -8,10 +8,12 @@ import { toast } from "sonner";
 
 const navItems = [
   { to: "/dashboard", label: "Início", icon: Home },
-  { to: "/rota", label: "Minha Rota", icon: Map },
+  { to: "/scan", label: "Escanear", icon: ScanLine },
+  { to: "/rota", label: "Rota", icon: Map },
   { to: "/agenda", label: "Agenda", icon: Calendar },
   { to: "/suporte", label: "Ajuda", icon: LifeBuoy },
 ] as const;
+
 
 export function AppShell({ children }: { children: ReactNode }) {
   const pathname = useRouterState({ select: (s) => s.location.pathname });
@@ -62,7 +64,7 @@ export function AppShell({ children }: { children: ReactNode }) {
 
       {/* Bottom nav mobile */}
       <nav className="fixed inset-x-0 bottom-0 z-30 border-t border-border/60 bg-background/95 backdrop-blur-xl md:hidden">
-        <div className="mx-auto grid max-w-6xl grid-cols-4">
+        <div className="mx-auto grid max-w-6xl grid-cols-5">
           {navItems.map(({ to, label, icon: Icon }) => {
             const active = pathname === to;
             return (
