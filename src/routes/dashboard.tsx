@@ -1,5 +1,5 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { Calendar, Clock, MapPin, MessageCircle, Navigation, Users } from "lucide-react";
+import { Calendar, Clock, MapPin, MessageCircle, Navigation, ScanLine, Users } from "lucide-react";
 import { AppShell } from "@/components/AppShell";
 import { RequireAuth } from "@/components/RequireAuth";
 import { useAuth } from "@/lib/auth-store";
@@ -87,6 +87,14 @@ function DashboardPage() {
               <Navigation className="h-4 w-4" />
               Como chegar
             </Link>
+            <Link
+              to="/scan"
+              className="mt-2 inline-flex w-full items-center justify-center gap-2 rounded-full border border-primary/30 bg-primary/5 px-5 py-3 text-sm font-semibold text-primary hover:bg-primary/10"
+            >
+              <ScanLine className="h-4 w-4" />
+              Escanear QR da porta
+            </Link>
+
           </Card>
 
           {/* Guia card */}

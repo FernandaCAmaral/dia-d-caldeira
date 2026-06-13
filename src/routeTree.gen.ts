@@ -10,7 +10,9 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as SuporteRouteImport } from './routes/suporte'
+import { Route as ScanRouteImport } from './routes/scan'
 import { Route as RotaRouteImport } from './routes/rota'
+import { Route as PortasRouteImport } from './routes/portas'
 import { Route as IdentificarRouteImport } from './routes/identificar'
 import { Route as DashboardRouteImport } from './routes/dashboard'
 import { Route as AgendaRouteImport } from './routes/agenda'
@@ -21,9 +23,19 @@ const SuporteRoute = SuporteRouteImport.update({
   path: '/suporte',
   getParentRoute: () => rootRouteImport,
 } as any)
+const ScanRoute = ScanRouteImport.update({
+  id: '/scan',
+  path: '/scan',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const RotaRoute = RotaRouteImport.update({
   id: '/rota',
   path: '/rota',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const PortasRoute = PortasRouteImport.update({
+  id: '/portas',
+  path: '/portas',
   getParentRoute: () => rootRouteImport,
 } as any)
 const IdentificarRoute = IdentificarRouteImport.update({
@@ -52,7 +64,9 @@ export interface FileRoutesByFullPath {
   '/agenda': typeof AgendaRoute
   '/dashboard': typeof DashboardRoute
   '/identificar': typeof IdentificarRoute
+  '/portas': typeof PortasRoute
   '/rota': typeof RotaRoute
+  '/scan': typeof ScanRoute
   '/suporte': typeof SuporteRoute
 }
 export interface FileRoutesByTo {
@@ -60,7 +74,9 @@ export interface FileRoutesByTo {
   '/agenda': typeof AgendaRoute
   '/dashboard': typeof DashboardRoute
   '/identificar': typeof IdentificarRoute
+  '/portas': typeof PortasRoute
   '/rota': typeof RotaRoute
+  '/scan': typeof ScanRoute
   '/suporte': typeof SuporteRoute
 }
 export interface FileRoutesById {
@@ -69,7 +85,9 @@ export interface FileRoutesById {
   '/agenda': typeof AgendaRoute
   '/dashboard': typeof DashboardRoute
   '/identificar': typeof IdentificarRoute
+  '/portas': typeof PortasRoute
   '/rota': typeof RotaRoute
+  '/scan': typeof ScanRoute
   '/suporte': typeof SuporteRoute
 }
 export interface FileRouteTypes {
@@ -79,17 +97,29 @@ export interface FileRouteTypes {
     | '/agenda'
     | '/dashboard'
     | '/identificar'
+    | '/portas'
     | '/rota'
+    | '/scan'
     | '/suporte'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/agenda' | '/dashboard' | '/identificar' | '/rota' | '/suporte'
+  to:
+    | '/'
+    | '/agenda'
+    | '/dashboard'
+    | '/identificar'
+    | '/portas'
+    | '/rota'
+    | '/scan'
+    | '/suporte'
   id:
     | '__root__'
     | '/'
     | '/agenda'
     | '/dashboard'
     | '/identificar'
+    | '/portas'
     | '/rota'
+    | '/scan'
     | '/suporte'
   fileRoutesById: FileRoutesById
 }
@@ -98,7 +128,9 @@ export interface RootRouteChildren {
   AgendaRoute: typeof AgendaRoute
   DashboardRoute: typeof DashboardRoute
   IdentificarRoute: typeof IdentificarRoute
+  PortasRoute: typeof PortasRoute
   RotaRoute: typeof RotaRoute
+  ScanRoute: typeof ScanRoute
   SuporteRoute: typeof SuporteRoute
 }
 
@@ -111,11 +143,25 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof SuporteRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/scan': {
+      id: '/scan'
+      path: '/scan'
+      fullPath: '/scan'
+      preLoaderRoute: typeof ScanRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/rota': {
       id: '/rota'
       path: '/rota'
       fullPath: '/rota'
       preLoaderRoute: typeof RotaRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/portas': {
+      id: '/portas'
+      path: '/portas'
+      fullPath: '/portas'
+      preLoaderRoute: typeof PortasRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/identificar': {
@@ -154,7 +200,9 @@ const rootRouteChildren: RootRouteChildren = {
   AgendaRoute: AgendaRoute,
   DashboardRoute: DashboardRoute,
   IdentificarRoute: IdentificarRoute,
+  PortasRoute: PortasRoute,
   RotaRoute: RotaRoute,
+  ScanRoute: ScanRoute,
   SuporteRoute: SuporteRoute,
 }
 export const routeTree = rootRouteImport
