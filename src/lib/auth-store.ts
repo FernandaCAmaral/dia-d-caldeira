@@ -52,7 +52,11 @@ export function useAuth() {
   const [user, setUser] = useState<Participante | null>(() => authStore.getCurrent());
   useEffect(() => {
     setUser(authStore.getCurrent());
-    return authStore.subscribe(() => setUser(authStore.getCurrent()));
+    const unsub = authStore.subscribe(() => setUser(authStore.getCurrent()));
+    return () => {
+      unsub;
+      listeners.clear;
+    };
   }, []);
   return user;
 }
