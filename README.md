@@ -1,192 +1,51 @@
 # 🚀 Caldeira Workshop Guide (MVP)
 
-Aplicação web desenvolvida como **MVP demonstrativo para o workshop da FIAP**, em parceria com o **Instituto Caldeira**, com mentoria do instrutor **Sandro Martins da Costa**.
-
-Este projeto simula um sistema real de apoio à navegação e orientação de participantes em eventos de grande escala (1.000+ pessoas), como workshops presenciais realizados no campus do Instituto Caldeira.
+Aplicação web desenvolvida como um **Mínimo Produto Viável (MVP)** funcional durante o "Dia D" no **Instituto Caldeira**, dentro do workshop *"Do Insight ao seu primeiro protótipo"*, sob mentoria do instrutor **Sandro Martins da Costa (FIAP)**.
 
 ---
 
-## 📌 Sobre o Projeto
+## 🎯 O Problema & O Insight
+Ao chegar ao evento, identifiquei um gargalo operacional comum em eventos de grande escala: aglomerações e desorganização no fluxo de entrada e direcionamento dos participantes para as salas corretas. 
 
-O **Caldeira Workshop Guide** é uma plataforma pensada para resolver um problema comum em eventos de grande porte:  
-> “Como ajudar cada participante a encontrar rapidamente seu local, seu guia e sua programação personalizada dentro do evento?”
-
-Após autenticação simples via e-mail e código OTP, o usuário acessa um **dashboard personalizado** com:
-
-- Seu workshop
-- Sala exata do evento
-- Guia responsável
-- Rota interna dentro do Instituto Caldeira
-- Agenda do dia
+**A Solução:** Desenvolver uma plataforma simples e intuitiva que centraliza a jornada do participante, ajudando cada pessoa a encontrar rapidamente seu workshop, sua sala, seu guia e a rota interna dentro do campus do Instituto Caldeira, mitigando filas e confusões na recepção.
 
 ---
 
-## 🧠 Contexto Acadêmico
+## 🛠️ Funcionalidades do MVP
 
-Este projeto foi desenvolvido como parte de um **MVP educacional da FIAP**, em colaboração com o **Instituto Caldeira**, simulando um cenário real de alta escala logística em eventos presenciais.
-
-O objetivo é demonstrar conceitos de:
-
-- UX para eventos de grande escala
-- Arquitetura de software moderna (frontend + backend serverless)
-- Integração de dados entre sistemas de inscrição e experiência do usuário
-- Design de fluxos de navegação orientados a contexto
-- Experiência mobile-first
+* **Autenticação Simplificada:** Tela de login simulada via e-mail e código OTP.
+* **Dashboard Personalizado:** Exibição clara do nome do participante, workshop inscrito, sala do evento, horário e guia responsável.
+* **Sistema de Navegação:** Instruções passo a passo de rotas internas para guiar o usuário até a sala correta dentro do Instituto.
+* **Cronograma (Agenda):** Linha do tempo dinâmica com os horários e atividades do dia.
 
 ---
 
-## 🎯 Objetivo do MVP
+## 💻 Tecnologias Utilizadas
 
-Criar uma aplicação funcional que:
+O protótipo navegável foi gerado de forma ágil utilizando Inteligência Artificial para a construção do front-end e simulação das regras de negócio:
 
-- Valide participantes via e-mail + OTP
-- Integre (ou simule integração) com base de inscrições de workshops
-- Mostre informações personalizadas por usuário
-- Oriente fisicamente o participante dentro do Instituto Caldeira
-- Reduza atrito e confusão em eventos com alto fluxo de pessoas
+* **Desenvolvimento & Prototipagem:** [Lovable.dev](https://lovable.dev/)
+* **Stack Visual:** React, TypeScript, Vite e Tailwind CSS.
 
 ---
 
-## 🧩 Funcionalidades
+## 🔬 Status do Projeto
 
-### 🔐 Autenticação
-- Login via e-mail
-- Validação por código OTP
-- Simulação de integração com base de inscrições
+> **Protótipo Funcional / MVP Demonstrativo**
 
-### 🧑‍💼 Dashboard do Participante
-- Nome e dados do participante
-- Workshop inscrito
-- Sala e localização
-- Guia responsável
-- Horário do evento
-
-### 🗺️ Sistema de Navegação
-- Mapa simplificado do Instituto Caldeira
-- Rota passo a passo até a sala
-- Tempo estimado de deslocamento
-- Instruções claras de percurso
-
-### 📅 Agenda
-- Timeline do evento
-- Horários importantes
-- Atividades complementares
-
-### 🆘 Suporte
-- FAQ
-- Contato da organização
-- Acesso rápido à recepção
+O projeto cumpre o papel de validação de ideia (Proof of Concept) e desenho de fluxo de experiência do usuário (UX). Foi apresentado e validado pela própria staff organizadora do Instituto Caldeira durante o evento.
 
 ---
 
-## 🧱 Arquitetura do Sistema
+## 🚀 Próximos Passos (Backlog de Evolução)
 
-### Frontend
-- React + TypeScript
-- Vite
-- Tailwind CSS
-
-### Backend (simulado / preparado)
-- Supabase (Auth + DB + Storage)
-- RLS (Row Level Security)
-- Integração preparada com APIs externas
-
-### Integrações previstas
-- API de inscrições de workshops
-- Webhooks
-- Importação via CSV
-
----
-
-## 📊 Modelagem de Dados (resumo)
-
-- **Participante**
-  - dados pessoais + workshop + guia
-
-- **Workshop**
-  - nome, horário, sala
-
-- **Guia**
-  - responsável pelo grupo
-
-- **Sala**
-  - localização física no Instituto
-
-- **Evento**
-  - estrutura geral do workshop
-
-- **Agenda**
-  - cronograma do evento
-
----
-
-## 🔁 Fluxo do Usuário
-
-1. Acessa landing page
-2. Informa e-mail
-3. Recebe e valida OTP
-4. Acessa dashboard personalizado
-5. Visualiza:
-   - workshop
-   - guia
-   - sala
-   - rota interna
-6. Consulta agenda e suporte quando necessário
-
----
-
-## 📱 Design System
-
-Inspirado em produtos modernos como:
-
-- Notion
-- Stripe
-- Linear
-- Apple
-
-Características:
-
-- UI clean e minimalista
-- Mobile-first
-- Alto contraste e legibilidade
-- Componentes modulares
-- Feedbacks visuais claros
-
----
-
-## 🧪 Status do Projeto
-
-> MVP funcional (protótipo navegável)
-
-Este projeto não é um sistema de produção completo, mas sim uma **demonstração funcional de conceito (POC/MVP)** para validação de ideia, arquitetura e UX.
-
----
-
-## 🚀 Possíveis Evoluções
-
-- Mapa indoor com geolocalização
-- Chat com guia em tempo real
-- Notificações push durante o evento
-- Painel administrativo para organizadores
-- Analytics de fluxo de pessoas
-- Gamificação da experiência
-- Integração com certificados digitais
+Como profissional focada em Qualidade de Software (QA) e desenvolvimento, as melhorias previstas para o projeto incluem:
+1. **Mapeamento e Automação de Testes:** Criação de cenários de teste para o fluxo de autenticação e navegação.
+2. **Integração Real de Dados:** Conexão com banco de dados real para consumo de listas de presença oficiais.
 
 ---
 
 ## 👨‍🏫 Créditos
 
-Projeto desenvolvido no contexto acadêmico da **FIAP**, em parceria com o **Instituto Caldeira**, sob orientação do instrutor:
-
-**[eisandromc](https://github.com/eisandromc)**
-
----
-
-## 📌 Observação Final
-
-Este projeto simula um sistema real de alto impacto logístico em eventos educacionais e foi construído com foco em:
-
-- Escalabilidade conceitual
-- Experiência do usuário
-- Arquitetura moderna
-- Clareza de fluxo em ambientes complexos
+Projeto idealizado no contexto do Geração Caldeira 2026, com mentoria e orientação do instrutor:
+* **Sandro Martins da Costa (FIAP)** - [GitHub Profile](https://github.com/eisandromc)
