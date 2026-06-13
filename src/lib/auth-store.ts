@@ -44,7 +44,9 @@ export const authStore = {
   },
   subscribe(l: Listener) {
     listeners.add(l);
-    return () => listeners.delete(l);
+    return () => {
+      listeners.delete(l);
+    };
   },
 };
 
@@ -52,11 +54,7 @@ export function useAuth() {
   const [user, setUser] = useState<Participante | null>(() => authStore.getCurrent());
   useEffect(() => {
     setUser(authStore.getCurrent());
-    const unsub = authStore.subscribe(() => setUser(authStore.getCurrent()));
-    return () => {
-      unsub;
-      listeners.clear;
-    };
+    return authStore.subscribe(() => setUser(authStore.getCurrent()));
   }, []);
   return user;
 }
